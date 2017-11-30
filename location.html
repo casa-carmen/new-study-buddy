@@ -3,6 +3,15 @@
 
   <head>
 
+<style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+    <!-- use this for CSS -->
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -16,6 +25,8 @@
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+
 
     <!-- Custom styles for this template -->
     <link href="css/business-casual.css" rel="stylesheet">
@@ -64,10 +75,24 @@
         </h2>
         <hr class="divider">
         <div class="row">
-          <div class="col-lg-8">
-            <div class="embed-responsive embed-responsive-16by9 map-container mb-4 mb-lg-0">
-              <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
-            </div>
+
+           <div id="map"></div>
+    <script>
+      function initMap() {
+        var London = {lat: 51.50358677101267, lng: -0.12084960687502644};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: London
+        });
+        var marker = new google.maps.Marker({
+          position: London,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEExjy2_kREC-_TRFk3AXH0ZCD9M-FHTs&callback=initMap">
+    </script>
           </div>
           <div class="col-lg-4">
             <h5 class="mb-0">Find Your Space!</h5>
