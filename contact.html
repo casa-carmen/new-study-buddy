@@ -3,12 +3,21 @@
 
   <head>
 
+<style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+    <!-- use this for CSS -->
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>STUDY BUDY - find your ideal space</title>
+    <title> STUDY BUDDY LOCATOR </title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +26,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
+
+
     <!-- Custom styles for this template -->
     <link href="css/business-casual.css" rel="stylesheet">
 
@@ -24,8 +35,8 @@
 
   <body>
 
-    <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">study buddy</div>
-    <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">your source of study space inspiration</div>
+    <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">STUDY BUDDY</div>
+    <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block"> Locate your study buddy! </div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
@@ -40,15 +51,15 @@
               <a class="nav-link text-uppercase text-expanded" href="index.html">Find your fit
                 <span class="sr-only">(current)</span>
               </a>
+             <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="contact.html">Location</a>
+            </li>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="about.html">Vote</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="blog.html">Social</a>
-            </li>
-            <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Location</a>
             </li>
           </ul>
         </div>
@@ -59,31 +70,68 @@
 
       <div class="bg-faded p-4 my-4">
         <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">Find
-          <strong>us!</strong>
+        <h2 class="text-center text-lg text-uppercase my-0">
+          <strong> find your space! </strong>
         </h2>
         <hr class="divider">
         <div class="row">
-          <div class="col-lg-8">
-            <div class="embed-responsive embed-responsive-16by9 map-container mb-4 mb-lg-0">
-              <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
-            </div>
+
+           <div id="map"></div>
+    <script>
+      function initMap() {
+        var London = {lat: 51.50358677101267, lng: -0.12084960687502644};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: London
+        });
+        var marker = new google.maps.Marker({
+          position: London,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEExjy2_kREC-_TRFk3AXH0ZCD9M-FHTs&callback=initMap">
+    </script>
           </div>
           <div class="col-lg-4">
-            <h5 class="mb-0">Phone:</h5>
-            <div class="mb-4">123.456.7890</div>
-            <h5 class="mb-0">Email:</h5>
-            <div class="mb-4">
-              <a href="mailto:name@example.com">name@example.com</a>
-            </div>
-            <h5 class="mb-0">Address:</h5>
-            <div class="mb-4">
-              3481 Melrose Place
-              <br>
-              Beverly Hills, CA 90210
-            </div>
+            <h3></h3>
+            <input type="Postcode" placeholder="Postcode"> 
+            <button type="submit" class="btn btn-secondary">Submit</button>
           </div>
         </div>
+      </div>
+
+      <div class="bg-faded p-4 my-4">
+        <hr class="divider">
+        <h2 class="text-center text-lg text-uppercase my-0">Contact
+          <strong>Form</strong>
+        </h2>
+        <hr class="divider">
+        <form>
+          <div class="row">
+            <div class="form-group col-lg-4">
+              <label class="text-heading">Name</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-lg-4">
+              <label class="text-heading">Email Address</label>
+              <input type="email" class="form-control">
+            </div>
+            <div class="form-group col-lg-4">
+              <label class="text-heading">Phone Number</label>
+              <input type="tel" class="form-control">
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group col-lg-12">
+              <label class="text-heading">Message</label>
+              <textarea class="form-control" rows="6"></textarea>
+            </div>
+            <div class="form-group col-lg-12">
+              <button type="submit" class="btn btn-secondary">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
 
     </div>
