@@ -64,3 +64,16 @@ hr.divider {
 .map-container iframe.clicked {
   pointer-events: auto;
 }
+
+
+h4 {
+  color:  #FDF5E6;
+}
+
+li {
+  color:  #FDF5E6;
+font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 1.25rem;
+}
+
+
